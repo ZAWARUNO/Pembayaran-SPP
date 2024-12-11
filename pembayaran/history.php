@@ -11,7 +11,7 @@
         <?php
         }
         ?>
-        <a href="laporan.php" target="_blank" class="btn btn-success ms-2">+ Buat Laporan</a>
+        <a href="pembayaran/laporan.php" target="_blank" class="btn btn-success ms-2">+ Buat Laporan</a>
         <hr>
         <table class="table">
           <tr>

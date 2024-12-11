@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include '../home/koneksi.php';
 if(isset($_POST['username'])) {
 	$username = $_POST['username'];
 	$password = md5($_POST['password']);
@@ -10,14 +10,14 @@ if(isset($_POST['username'])) {
 		$_SESSION['user'] = mysqli_fetch_array($cek_petugas);
 		$_SESSION['success_message'] = "Selamat datang kembali, " . $_SESSION['user']['level'];
 		$toastClass = "text-bg-success";
-		header('location:index.php');
+		header('location:../index.php');
 		exit;
 		} else {
 		$cek_siswa = mysqli_query($koneksi, "SELECT*FROM siswa WHERE nisn='$username' AND password='$password'");
 		if(mysqli_num_rows($cek_siswa)) {
 			$_SESSION['user'] = mysqli_fetch_array($cek_siswa);
 			$_SESSION['success_message'] = "Selamat datang kembali, Siswa!";
-			header('location:index.php');
+			header('location:../index.php');
 			exit;
 				} else{
 					$_SESSION['error_message'] = "Username atau password salah!";
@@ -40,7 +40,7 @@ if (isset($_SESSION['error_message'])) {
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+	<link rel="shortcut icon" href="../img/icons/smkn_4_plg.png" />
 
 	<title>Login Pembayaran SPP SMKN 4 Palembang</title>
 
@@ -102,9 +102,9 @@ if (isset($_SESSION['error_message'])) {
 </div>
 <?php endif; ?>
 
-	<script src="js/app.js"></script>
+	<script src="../js/app.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="js/script.js"></script>
+	<script src="../js/script.js"></script>
 </body>
 
 </html>

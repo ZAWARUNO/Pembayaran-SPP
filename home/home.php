@@ -44,7 +44,7 @@
                       <td colspan="3" class="text-center">Tata cara pembayaran SPP</td>
                     </tr>
                   </table>
-                  <embed src="tata_cara_pembayaran.pdf" type="application/pdf" width="100%" height="800px">
+                  <embed src="img/tata_cara_pembayaran.pdf" type="application/pdf" width="100%" height="800px">
 								</div>
 							</div>
 						</div>

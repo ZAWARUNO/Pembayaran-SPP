@@ -1,11 +1,11 @@
 <?php
-include 'koneksi.php';
-if(!isset($_SESSION['user'])) {
-	header('location:login.php');
+include 'home/koneksi.php';
+if (!isset($_SESSION['user'])) {
+	header('location:validation/login.php');
 }
 if (isset($_SESSION['success_message'])) {
-    $message = $_SESSION['success_message'];
-    unset($_SESSION['success_message']);
+	$message = $_SESSION['success_message'];
+	unset($_SESSION['success_message']);
 }
 $logs = mysqli_query($koneksi, "SELECT * FROM logs");
 $jumlahNotif = mysqli_num_rows($logs);
@@ -33,61 +33,61 @@ $jumlahNotif = mysqli_num_rows($logs);
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="index.php">
-          <span class="align-middle">Aplikasi Pembayaran SPP SMKN 4 PLG</span>
-        </a>
+					<span class="align-middle">Aplikasi Pembayaran SPP SMKN 4 PLG</span>
+				</a>
 
 				<ul class="sidebar-nav">
-    <li class="sidebar-header">Pages</li>
-    <li class="sidebar-item <?php echo !isset($_GET['page']) || $_GET['page'] == 'home' ? 'active' : ''; ?>">
-        <a class="sidebar-link" href="index.php">
-            <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
-        </a>
-    </li>
-    <?php if (isset($_SESSION['user']['level'])): ?>
-        <?php if ($_SESSION['user']['level'] == 'admin'): ?>
-            <li class="sidebar-item <?php echo isset($_GET['page']) && $_GET['page'] == 'kelas' ? 'active' : ''; ?>">
-                <a class="sidebar-link" href="index.php?page=kelas">
-                    <i class="align-middle" data-feather="home"></i> <span class="align-middle">Kelas</span>
-                </a>
-            </li>
-            <li class="sidebar-item <?php echo isset($_GET['page']) && $_GET['page'] == 'siswa' ? 'active' : ''; ?>">
-                <a class="sidebar-link" href="index.php?page=siswa">
-                    <i class="align-middle" data-feather="users"></i> <span class="align-middle">Siswa</span>
-                </a>
-            </li>
-            <li class="sidebar-item <?php echo isset($_GET['page']) && $_GET['page'] == 'spp' ? 'active' : ''; ?>">
-                <a class="sidebar-link" href="index.php?page=spp">
-                    <i class="align-middle" data-feather="book-open"></i> <span class="align-middle">SPP</span>
-                </a>
-            </li>
-            <li class="sidebar-item <?php echo isset($_GET['page']) && $_GET['page'] == 'petugas' ? 'active' : ''; ?>">
-                <a class="sidebar-link" href="index.php?page=petugas">
-                    <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Petugas</span>
-                </a>
-            </li>
-        <?php endif; ?>
-        <li class="sidebar-item <?php echo isset($_GET['page']) && $_GET['page'] == 'pembayaran' ? 'active' : ''; ?>">
-            <a class="sidebar-link" href="index.php?page=pembayaran">
-                <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Entri Pembayaran</span>
-            </a>
-        </li>
-    <?php endif; ?>
-    <li class="sidebar-item <?php echo isset($_GET['page']) && $_GET['page'] == 'history' ? 'active' : ''; ?>">
-        <a class="sidebar-link" href="index.php?page=history">
-            <i class="align-middle" data-feather="clock"></i> <span class="align-middle">History Pembayaran</span>
-        </a>
-    </li>
-</ul>
+					<li class="sidebar-header">Pages</li>
+					<li class="sidebar-item <?php echo !isset($_GET['page']) || $_GET['page'] == 'home/home' ? 'active' : ''; ?>">
+						<a class="sidebar-link" href="index.php">
+							<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+						</a>
+					</li>
+					<?php if (isset($_SESSION['user']['level'])): ?>
+						<?php if ($_SESSION['user']['level'] == 'admin'): ?>
+							<li class="sidebar-item <?php echo isset($_GET['page']) && $_GET['page'] == 'kelas' ? 'active' : ''; ?>">
+								<a class="sidebar-link" href="index.php?page=kelas/kelas">
+									<i class="align-middle" data-feather="home"></i> <span class="align-middle">Kelas</span>
+								</a>
+							</li>
+							<li class="sidebar-item <?php echo isset($_GET['page']) && $_GET['page'] == 'siswa' ? 'active' : ''; ?>">
+								<a class="sidebar-link" href="index.php?page=siswa/siswa">
+									<i class="align-middle" data-feather="users"></i> <span class="align-middle">Siswa</span>
+								</a>
+							</li>
+							<li class="sidebar-item <?php echo isset($_GET['page']) && $_GET['page'] == 'spp' ? 'active' : ''; ?>">
+								<a class="sidebar-link" href="index.php?page=spp/spp">
+									<i class="align-middle" data-feather="book-open"></i> <span class="align-middle">SPP</span>
+								</a>
+							</li>
+							<li class="sidebar-item <?php echo isset($_GET['page']) && $_GET['page'] == 'petugas' ? 'active' : ''; ?>">
+								<a class="sidebar-link" href="index.php?page=petugas/petugas">
+									<i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Petugas</span>
+								</a>
+							</li>
+						<?php endif; ?>
+						<li class="sidebar-item <?php echo isset($_GET['page']) && $_GET['page'] == 'pembayaran' ? 'active' : ''; ?>">
+							<a class="sidebar-link" href="index.php?page=pembayaran/pembayaran">
+								<i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Entri Pembayaran</span>
+							</a>
+						</li>
+					<?php endif; ?>
+					<li class="sidebar-item <?php echo isset($_GET['page']) && $_GET['page'] == 'history' ? 'active' : ''; ?>">
+						<a class="sidebar-link" href="index.php?page=pembayaran/history">
+							<i class="align-middle" data-feather="clock"></i> <span class="align-middle">History Pembayaran</span>
+						</a>
+					</li>
+				</ul>
 
 
 			</div>
 		</nav>
 
-<div class="main">
+		<div class="main">
 			<nav class="navbar navbar-expand navbar-light navbar-bg">
 				<a class="sidebar-toggle js-sidebar-toggle">
-          <i class="hamburger align-self-center"></i>
-        </a>
+					<i class="hamburger align-self-center"></i>
+				</a>
 
 				<div class="navbar-collapse collapse">
 					<ul class="navbar-nav navbar-align">
@@ -95,51 +95,51 @@ $jumlahNotif = mysqli_num_rows($logs);
 							<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
 								<div class="position-relative">
 									<i class="align-middle" data-feather="bell"></i>
-									<span class="indicator"><?php echo $jumlahNotif;?></span>
+									<span class="indicator"><?php echo $jumlahNotif; ?></span>
 								</div>
 							</a>
 							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="alertsDropdown">
 								<div class="dropdown-menu-header">
-									<?php echo $jumlahNotif;?> New Notifications	
+									<?php echo $jumlahNotif; ?> New Notifications
 								</div>
 								<div class="list-group">
-									<?php 
-									$i = 1;
-									while($log = mysqli_fetch_array($logs)) :
-									?>
-									<a href="
 									<?php
-												if ($log['pesan'] == 'Kelas baru ditambahkan') {
-													echo '?page=kelas';
-												} elseif ($log['pesan'] == 'Siswa baru telah ditambahkan') {
-													echo '?page=siswa';
-												} elseif($log['pesan'] == 'SPP baru ditambahkan') {
-												echo '?page=spp';
-												} elseif($log['pesan'] == 'Siswa melakukan pembayaran') {
-												echo '?page=pembayaran';
-												}
-												?>
+									$i = 1;
+									while ($log = mysqli_fetch_array($logs)) :
+									?>
+										<a href="
+									<?php
+										if ($log['pesan'] == 'Kelas baru ditambahkan') {
+											echo '?page=kelas';
+										} elseif ($log['pesan'] == 'Siswa baru telah ditambahkan') {
+											echo '?page=siswa';
+										} elseif ($log['pesan'] == 'SPP baru ditambahkan') {
+											echo '?page=spp';
+										} elseif ($log['pesan'] == 'Siswa melakukan pembayaran') {
+											echo '?page=pembayaran';
+										}
+									?>
 												" class="list-group-item">
-										<div class="row g-0 align-items-center">
-											<div class="col-2">
-												<?php
-												if ($log['pesan'] == 'Kelas baru ditambahkan') {
-													echo '<i class="text-primary" data-feather="home"></i>';
-												} elseif ($log['pesan'] == 'Siswa baru telah ditambahkan') {
-													echo '<i class="text-success" data-feather="user-plus"></i>';
-												} elseif($log['pesan'] == 'SPP baru ditambahkan') {
-												echo '<i class="text-warning" data-feather="bell"></i>';
-												} elseif($log['pesan'] == 'Siswa melakukan pembayaran') {
-												echo '<i class="text-danger" data-feather="alert-circle"></i>';
-												}
-												?>
+											<div class="row g-0 align-items-center">
+												<div class="col-2">
+													<?php
+													if ($log['pesan'] == 'Kelas baru ditambahkan') {
+														echo '<i class="text-primary" data-feather="home"></i>';
+													} elseif ($log['pesan'] == 'Siswa baru telah ditambahkan') {
+														echo '<i class="text-success" data-feather="user-plus"></i>';
+													} elseif ($log['pesan'] == 'SPP baru ditambahkan') {
+														echo '<i class="text-warning" data-feather="bell"></i>';
+													} elseif ($log['pesan'] == 'Siswa melakukan pembayaran') {
+														echo '<i class="text-danger" data-feather="alert-circle"></i>';
+													}
+													?>
+												</div>
+												<div class="col-10">
+													<div class="text-dark"><?php echo $log['pesan']; ?></div>
+													<div class="text-muted small mt-1"><?php echo $log['tanggal']; ?></div>
+												</div>
 											</div>
-											<div class="col-10">
-												<div class="text-dark"><?php echo $log['pesan'];?></div>
-												<div class="text-muted small mt-1"><?php echo $log['tanggal'];?></div>
-											</div>
-										</div>
-									</a>
+										</a>
 									<?php
 										$i++;
 									endwhile;
@@ -153,18 +153,18 @@ $jumlahNotif = mysqli_num_rows($logs);
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
-                <i class="align-middle" data-feather="settings"></i>
-              </a>
+								<i class="align-middle" data-feather="settings"></i>
+							</a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="img/icons/users-icon-png-26.jpg" class="avatar img-fluid rounded me-1" alt="foto profil" /> <span class="text-dark">
+								<img src="img/icons/users-icon-png-26.jpg" class="avatar img-fluid rounded me-1" alt="foto profil" /> <span class="text-dark">
 									<?php
 									echo isset($_SESSION['user']['nama']) ? $_SESSION['user']['nama'] : $_SESSION['user']['nama_petugas'];
 									?>
 								</span>
-              </a>
+							</a>
 							<div class="dropdown-menu dropdown-menu-end">
-								<a class="dropdown-item" href="logout.php"><i class="align-middle" data-feather="log-in"></i> Logout</a>
+								<a class="dropdown-item" href="validation/logout.php"><i class="align-middle" data-feather="log-in"></i> Logout</a>
 							</div>
 						</li>
 					</ul>
@@ -174,21 +174,21 @@ $jumlahNotif = mysqli_num_rows($logs);
 			<main class="content">
 				<div class="container-fluid p-0">
 					<?php
-					$page = isset($_GET['page']) ? $_GET['page'] : 'home';
+					$page = isset($_GET['page']) ? $_GET['page'] : 'home/home';
 					include $page . '.php';
 					?>
 					<?php if (!empty($message)): ?>
-        <div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 11">
-            <div id="liveToast" class="toast align-items-center text-white bg-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="d-flex">
-                    <div class="toast-body">
-                        <?php echo $message; ?>
-                    </div>
-                    <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-            </div>
-        </div>
-    <?php endif; ?>
+						<div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 11">
+							<div id="liveToast" class="toast align-items-center text-white bg-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+								<div class="d-flex">
+									<div class="toast-body">
+										<?php echo $message; ?>
+									</div>
+									<button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+								</div>
+							</div>
+						</div>
+					<?php endif; ?>
 				</div>
 			</main>
 
