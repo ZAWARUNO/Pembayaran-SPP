@@ -7,7 +7,7 @@
         <?php
         if (isset($_SESSION['user']['level'])) {
         ?>
-        <a href="?page=pembayaran" class="btn btn-primary">+ Tambah Pembayaran</a>
+        <a href="?page=pembayaran/pembayaran" class="btn btn-primary">+ Tambah Pembayaran</a>
         <?php
         }
         ?>
@@ -60,7 +60,7 @@
             <?php if (isset($_SESSION['user']['level'])) { ?>
               <td>
                 <!-- <a href="?page=pembayaran_ubah&id=<?php echo $data['id_pembayaran']; ?>" class="btn btn-warning me-3"><i class="align-middle" data-feather="edit"></i> Ubah</a> -->
-                <a href="?page=pembayaran_hapus&id=<?php echo $data['id_pembayaran']; ?>" class="btn btn-danger"><i class="align-middle" data-feather="delete"></i> Hapus</a>
+                <a href="?page=pembayaran/pembayaran_hapus&id=<?php echo $data['id_pembayaran']; ?>" class="btn btn-danger"><i class="align-middle" data-feather="delete"></i> Hapus</a>
               </td>
             </tr>
             <?php

@@ -4,7 +4,7 @@
   <div class="col-12">
     <div class="card">
       <div class="card-body">
-        <a href="?page=tambah_petugas" class="btn btn-primary">+ Tambah Petugas</a>
+        <a href="?page=petugas/tambah_petugas" class="btn btn-primary">+ Tambah Petugas</a>
         <hr>
         <table class="table">
           <tr>
@@ -25,8 +25,8 @@
               <td><?php echo $data['username'];?></td>
               <td><?php echo $data['level'];?></td>
               <td>
-                <a href="?page=petugas_ubah&id=<?php echo $data['id_petugas']; ?>" class="btn btn-warning me-3"><i class="align-middle" data-feather="edit"></i> Ubah</a>
-                <a href="?page=petugas_hapus&id=<?php echo $data['id_petugas']; ?>" class="btn btn-danger"><i class="align-middle" data-feather="delete"></i> Hapus</a>
+                <a href="?page=petugas/petugas_ubah&id=<?php echo $data['id_petugas']; ?>" class="btn btn-warning me-3"><i class="align-middle" data-feather="edit"></i> Ubah</a>
+                <a href="?page=petugas/petugas_hapus&id=<?php echo $data['id_petugas']; ?>" class="btn btn-danger"><i class="align-middle" data-feather="delete"></i> Hapus</a>
               </td>
             </tr>
             <?php

@@ -17,7 +17,7 @@ if(isset($_POST['tahun'])) {
   <div class="col-12">
     <div class="card">
       <div class="card-body">
-        <a href="?page=spp" class="btn btn-primary"><i class="align-middle" data-feather="corner-down-left"></i> Kembali</a>
+        <a href="?page=spp/spp" class="btn btn-primary"><i class="align-middle" data-feather="corner-down-left"></i> Kembali</a>
         <hr>
         <form method="post">
         <table class="table">

@@ -1,5 +1,5 @@
 <?php
-  include 'koneksi.php';
+  include '../home/koneksi.php';
 
   if (isset($_SESSION['user']['level'])) { 
     $where = "";

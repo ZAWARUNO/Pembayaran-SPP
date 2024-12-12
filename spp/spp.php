@@ -4,7 +4,7 @@
   <div class="col-12">
     <div class="card">
       <div class="card-body">
-        <a href="?page=tambah_SPP" class="btn btn-primary">+ Tambah SPP</a>
+        <a href="?page=spp/tambah_SPP" class="btn btn-primary">+ Tambah SPP</a>
         <hr>
         <table class="table">
           <tr>
@@ -23,8 +23,8 @@
               <td><?php echo $data['tahun'];?></td>
               <td><?php echo number_format($data['nominal']);?></td>
               <td>
-                <a href="?page=spp_ubah&id=<?php echo $data['id_spp']; ?>" class="btn btn-warning me-3"><i class="align-middle" data-feather="edit"></i> Ubah</a>
-                <a href="?page=spp_hapus&id=<?php echo $data['id_spp']; ?>" class="btn btn-danger"><i class="align-middle" data-feather="delete"></i> Hapus</a>
+                <a href="?page=spp/spp_ubah&id=<?php echo $data['id_spp']; ?>" class="btn btn-warning me-3"><i class="align-middle" data-feather="edit"></i> Ubah</a>
+                <a href="?page=spp/spp_hapus&id=<?php echo $data['id_spp']; ?>" class="btn btn-danger"><i class="align-middle" data-feather="delete"></i> Hapus</a>
               </td>
             </tr>
             <?php
